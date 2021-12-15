@@ -14,11 +14,13 @@ class AuthorsTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker =\Faker\Factory::create('ja_JP');
+
         // Authorsテーブルにレコードを10件登録する
-        for ($i=0; $i <= 10; $i++) {
+        for ($i=0; $i < 10; $i++) {
             $author = [
-                'name' => '著者名' . $i,
-                'kana' => 'チョシャメイ' . $i,
+                'name' => $faker->name,
+                'kana' => $faker->kanaName,
                 'created_at' => now(),
                 'updated_at' => now(),
             ];
